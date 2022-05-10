@@ -20,4 +20,36 @@ Save the Clean data to the file
 
 
 # CODE
+import pandas as pd
+df=pd.read_csv("Data_set.csv")
+df.head(10)
+df.tail()
+df.info()
+df.isnull().sum()
+df['show_name']=df['show_name'].fillna(df['show_name'].mode()[0])
+df['rating']=df['rating'].fillna(df['rating'].mean())
+df['watchers']=df['watchers'].fillna(df['watchers'].median())
+df['aired_on']=df['aired_on'].fillna(df['aired_on'].mode()[0])
+df['original_network']=df['original_network'].fillna(df['original_network'].mode()[0])
+df['current_overall_rank']=df['current_overall_rank'].fillna(df['current_overall_rank'].median())
+df.info()
+
 # OUPUT
+###BEFORE THE CLEANING OF DATA:
+![out1](https://user-images.githubusercontent.com/94168395/167537075-33005277-c196-408b-9e69-cfa30b29b1b4.png)
+![out2](https://user-images.githubusercontent.com/94168395/167537430-c57532aa-b19b-4356-849f-60f3350fdc89.png)
+
+
+###AFTER CLEANING THE DATA:
+![out3](https://user-images.githubusercontent.com/94168395/167537475-46118be5-0ddb-426b-80e8-41a507994109.png)
+
+![out4](https://user-images.githubusercontent.com/94168395/167537183-7b07fb34-6e79-465f-9bbe-5ae089ddcec6.png)
+
+#RESULT:
+Hence the data is read and cleaned
+
+
+
+
+
+
